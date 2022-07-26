@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  min-height: 100vh;
+  max-width: 932px;
+}
+
+.container-header {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.header__title {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  margin: 0;
+}
+
+.container-crew {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(90%/2, max(150px, 70%/3)), 1fr)
+  );
+  column-gap: clamp(1rem, calc(100vw / 20), 90px);
+}
+.crew__member-info {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100% + 5vh);
+}
+
+.crew__member-info::after {
+  content: attr(title);
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+}
+
+figure {
+  margin: 0;
+}
+
+.crew__member-photo {
+  max-inline-size: 100%;
+}
+
+.crew__member-name {
+  font-weight: 600;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: center;
+}
